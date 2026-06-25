@@ -1,176 +1,172 @@
-
+/* RESET */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg, #f4f7fc, #e6eefc);
-    min-height:100vh;
-    padding:40px 20px;
-    color:#333;
+    background: #f4f4f4;
+    color: #333;
+    padding: 40px 20px;
 }
 
-/* TÍTULOS */
+/* TÍTULO */
 h1{
-    text-align:center;
-    color:#1e3a8a;
-    margin-bottom:30px;
-    font-size:2.3rem;
+    text-align: center;
+    color: #6b1027;
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: 700;
 }
 
 h2{
-    margin:40px 0 20px;
-    color:#1e3a8a;
-    text-align:center;
+    text-align: center;
+    color: #6b1027;
+    margin: 40px 0 20px;
 }
 
+/* FORMULÁRIO */
 form{
-    max-width:700px;
-    margin:auto;
-    background:#fff;
-    padding:30px;
-    border-radius:16px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+    max-width: 750px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-top: 6px solid #6b1027;
 }
 
+/* CAMPOS */
 input[type="text"],
 input[type="number"]{
-    width:100%;
-    padding:14px;
-    border:1px solid #d1d5db;
-    border-radius:10px;
-    font-size:1rem;
-    transition:0.3s;
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: .3s;
 }
 
 input:focus{
-    outline:none;
-    border-color:#2563eb;
-    box-shadow:0 0 0 4px rgba(37,99,235,0.15);
+    outline: none;
+    border-color: #6b1027;
+    box-shadow: 0 0 0 4px rgba(107,16,39,.15);
 }
 
-/* FIELDSET */
+/* COMBUSTÍVEL */
 fieldset{
-    border:1px solid #dbe3f0;
-    border-radius:10px;
-    padding:15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
 }
 
 legend{
-    padding:0 10px;
-    color:#1e3a8a;
-    font-weight:bold;
+    color: #6b1027;
+    font-weight: bold;
+    padding: 0 10px;
 }
 
 fieldset label{
-    margin-right:15px;
-    cursor:pointer;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
-/* BOTÃO */
 button{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:14px;
-    border-radius:10px;
-    font-size:1rem;
-    font-weight:600;
-    cursor:pointer;
-    transition:0.3s;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #6b1027;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
 }
 
 button:hover{
-    background:#1d4ed8;
-    transform:translateY(-2px);
+    background: #8a1735;
+    transform: translateY(-2px);
 }
 
-button:active{
-    transform:translateY(0);
-}
-
+/* LISTA */
 #listaVeiculos{
-    max-width:1000px;
-    margin:0 auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 20px;
 }
 
+/* CARD */
 .card{
-    background:#fff;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    transition:0.3s;
-    border-top:5px solid #2563eb;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: .3s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
 }
 
+/* CABEÇALHO CARD */
 .card h3{
-    color:#1e3a8a;
-    margin-bottom:15px;
-    font-size:1.3rem;
+    background: #6b1027;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
+/* CONTEÚDO CARD */
 .card p{
-    margin-bottom:8px;
-    line-height:1.5;
-}
-
-/* DESTAQUE DOS VALORES */
-.card p:nth-last-child(4){
-    color:#d97706;
-    font-weight:bold;
-}
-
-.card p:nth-last-child(3){
-    color:#dc2626;
-    font-weight:bold;
-}
-
-.card p:nth-last-child(2){
-    color:#0891b2;
-    font-weight:bold;
+    padding: 8px 20px;
+    border-bottom: 1px solid #eee;
 }
 
 .card p:last-child{
-    margin-top:10px;
-    padding-top:10px;
-    border-top:1px solid #e5e7eb;
-    color:#16a34a;
-    font-size:1.1rem;
-    font-weight:700;
+    border-bottom: none;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width:768px){
+/* VALORES */
+.card p strong{
+    color: #555;
+}
+
+/* VALOR FINAL */
+.card p.valor-final{
+    background: #f3f4f6;
+    color: #6b1027;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 15px 20px;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
 
     body{
-        padding:20px 10px;
+        padding: 20px 10px;
     }
 
     form{
-        padding:20px;
-    }
-
-    h1{
-        font-size:1.8rem;
+        padding: 20px;
     }
 
     fieldset{
-        display:flex;
-        flex-direction:column;
-        gap:10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1{
+        font-size: 1.8rem;
     }
 }

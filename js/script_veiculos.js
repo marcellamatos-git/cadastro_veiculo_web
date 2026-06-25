@@ -1,19 +1,19 @@
 import { calcularIPVA, calcularSeguro } from "./script_calculos.js";
 
-const form = document.getElementById("formVeiculo");
-const lista = document.getElementById("listaVeiculos");
+const form = document.querySelector("#formVeiculo");
+const lista = document.querySelector("#listaVeiculos");
 
 let veiculos = [];
 
-form.addEventListener("submit", function(event){
+form.addEventListener("submit", (evt) => {
 
-    event.preventDefault();
+    evt.preventDefault();
 
-    const marca = document.getElementById("marca").value;
-    const modelo = document.getElementById("modelo").value;
-    const placa = document.getElementById("placa").value;
-    const ano = Number(document.getElementById("ano").value);
-    const valor = Number(document.getElementById("valor").value);
+    const marca = document.querySelector("#marca").value;
+    const modelo = document.querySelector("#modelo").value;
+    const placa = document.querySelector("#placa").value;
+    const ano = Number (document.querySelector("#ano").value);
+    const valor = Number (document.querySelector("#valor").value);
 
     const combustivel =
         document.querySelector('input[name="combustivel"]:checked').value;
@@ -36,55 +36,36 @@ form.addEventListener("submit", function(event){
 
 function listarVeiculos(){
 
-    lista.innerHTML = "";
+    const anoAtual = new Date().getFullYear();
 
-    veiculos.forEach((veiculo)=>{
-
-        const anoAtual = new Date().getFullYear();
+    lista.innerHTML = veiculos.map((veiculo) => {
 
         const idade = anoAtual - veiculo.ano;
 
         const ipva = calcularIPVA(veiculo.valor);
-
         const seguro = calcularSeguro(veiculo.valor);
-
         const licenciamento = 200;
 
-        const valorFinal =
-            ipva +
-            seguro +
-            licenciamento;
+        const valorFinal = ipva + seguro + licenciamento;
 
-        const card = document.createElement("div");
+        return `
+            <div class="card">
 
-        card.classList.add("card");
+                <h3>${veiculo.modelo}</h3>
 
-        card.innerHTML = `
-            <h3>${veiculo.modelo}</h3>
+                Marca: ${veiculo.marca}<br>
+                Placa: ${veiculo.placa}<br>
+                Idade: ${idade} anos<br>
 
-            <p><strong>Marca:</strong> ${veiculo.marca}</p>
+                Seguro: R$ ${seguro.toFixed(2)}<br>
+                IPVA: R$ ${ipva.toFixed(2)}<br>
+                Licenciamento: R$ ${licenciamento.toFixed(2)}<br>
 
-            <p><strong>Placa:</strong> ${veiculo.placa}</p>
+            
+                    Valor Final: R$ ${valorFinal.toFixed(2)}<br>
+                
 
-            <p><strong>Idade:</strong> ${idade} anos</p>
-
-            <p><strong>Seguro:</strong>
-                R$ ${seguro.toFixed(2)}
-            </p>
-
-            <p><strong>IPVA:</strong>
-                R$ ${ipva.toFixed(2)}
-            </p>
-
-            <p><strong>Licenciamento:</strong>
-                R$ ${licenciamento.toFixed(2)}
-            </p>
-
-            <p><strong>Valor Final:</strong>
-                R$ ${valorFinal.toFixed(2)}
-            </p>
+            </div>
         `;
-
-        lista.appendChild(card);
-    });
+    })
 }
