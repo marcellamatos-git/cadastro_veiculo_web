@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de veiculos</title>
+    <title>Cadastro de Veículos</title>
+
+    <link rel="stylesheet" href="css/style_veiculos.css">
+    <script src="js/script_veiculos.js" type="module" defer ></script>
+
+
+
+
 </head>
 <body>
-    
+
+    <h1>Cadastro de Veículos</h1>
+
+    <form id="formVeiculo">
+
+        <input type="text" id="marca" placeholder="Marca">
+
+        <input type="text" id="modelo" placeholder="Modelo">
+
+        <input type="text" id="placa" placeholder="Placa">
+
+        <input type="number" id="ano" placeholder="Ano de fabricação">
+
+        <input type="number" id="valor" placeholder="Valor do veículo">
+
+        <fieldset>
+            <legend>Combustível</legend>
+
+            <label>
+                <input type="radio" name="combustivel" value="Gasolina" required>
+                Gasolina
+            </label>
+
+            <label>
+                <input type="radio" name="combustivel" value="Etanol">
+                Etanol
+            </label>
+
+            <label>
+                <input type="radio" name="combustivel" value="Flex">
+                Flex
+            </label>
+
+            <label>
+                <input type="radio" name="combustivel" value="Diesel">
+                Diesel
+            </label>
+        </fieldset>
+
+        <button type="submit">Adicionar</button>
+
+    </form>
+
+    <hr>
+
+    <h2>Veículos Cadastrados</h2>
+
+    <div id="listaVeiculos"></div>
+    <script type="module" src="./js/script_veiculos.js"></script>
+
 </body>
 </html>
