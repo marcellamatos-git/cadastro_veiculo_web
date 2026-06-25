@@ -1,5 +1,6 @@
 import { calcularIPVA, calcularSeguro } from "./script_calculos.js";
 
+
 const form = document.querySelector("#formVeiculo");
 const lista = document.querySelector("#listaVeiculos");
 
@@ -42,7 +43,11 @@ function listarVeiculos(){
 
         const idade = anoAtual - veiculo.ano;
 
-        const ipva = calcularIPVA(veiculo.valor);
+       const ipva = calcularIPVA(
+        veiculo.valor,
+        veiculo.ano,
+        veiculo.combustivel)
+    
         const seguro = calcularSeguro(veiculo.valor);
         const licenciamento = 200;
 
