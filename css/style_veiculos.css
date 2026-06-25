@@ -1,0 +1,179 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #f4f7fc, #e6eefc);
+    min-height:100vh;
+    padding:40px 20px;
+    color:#333;
+}
+
+/* TÍTULOS */
+h1{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:30px;
+    font-size:2.3rem;
+}
+
+h2{
+    margin:40px 0 20px;
+    color:#1e3a8a;
+    text-align:center;
+}
+
+/* FORMULÁRIO */
+form{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input[type="text"],
+input[type="number"]{
+    width:100%;
+    padding:14px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+input:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,0.15);
+}
+
+/* FIELDSET */
+fieldset{
+    border:1px solid #dbe3f0;
+    border-radius:10px;
+    padding:15px;
+}
+
+legend{
+    padding:0 10px;
+    color:#1e3a8a;
+    font-weight:bold;
+}
+
+fieldset label{
+    margin-right:15px;
+    cursor:pointer;
+}
+
+/* BOTÃO */
+button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:10px;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+button:active{
+    transform:translateY(0);
+}
+
+/* LISTA DE VEÍCULOS */
+#listaVeiculos{
+    max-width:1000px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:20px;
+}
+
+/* CARD */
+.card{
+    background:#fff;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+    border-top:5px solid #2563eb;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.12);
+}
+
+.card h3{
+    color:#1e3a8a;
+    margin-bottom:15px;
+    font-size:1.3rem;
+}
+
+.card p{
+    margin-bottom:8px;
+    line-height:1.5;
+}
+
+/* DESTAQUE DOS VALORES */
+.card p:nth-last-child(4){
+    color:#d97706;
+    font-weight:bold;
+}
+
+.card p:nth-last-child(3){
+    color:#dc2626;
+    font-weight:bold;
+}
+
+.card p:nth-last-child(2){
+    color:#0891b2;
+    font-weight:bold;
+}
+
+.card p:last-child{
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid #e5e7eb;
+    color:#16a34a;
+    font-size:1.1rem;
+    font-weight:700;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width:768px){
+
+    body{
+        padding:20px 10px;
+    }
+
+    form{
+        padding:20px;
+    }
+
+    h1{
+        font-size:1.8rem;
+    }
+
+    fieldset{
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+    }
+}
