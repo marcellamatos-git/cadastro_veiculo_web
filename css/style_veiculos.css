@@ -95,7 +95,6 @@ button:active{
     transform:translateY(0);
 }
 
-/* LISTA DE VEÍCULOS */
 #listaVeiculos{
     max-width:1000px;
     margin:0 auto;
@@ -104,7 +103,6 @@ button:active{
     gap:20px;
 }
 
-/* CARD */
 .card{
     background:#fff;
     border-radius:15px;
